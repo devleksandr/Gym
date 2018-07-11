@@ -14,8 +14,11 @@ interface GymDao {
         @Query("SELECT * from gym")
         fun getGym (gymEntity: GymEntity)
 
+        @Query("SELECT * from gym limit 10")
+        fun getRecentExercises() : List<GymEntity>
+
         @Query ("SELECT * from gym where $DATE=:date")
-        fun getGymByDate (date : Date ) : GymEntity
+        fun getGymByDate (date : String ) : GymEntity
 
         @Query("SELECT * from exercises")
         fun getExercise(exerciseEntity: ExerciseEntity)

@@ -3,11 +3,9 @@ package com.shurik.gym.database
 import android.arch.persistence.room.Database
 import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
-import android.arch.persistence.room.TypeConverters
 import android.content.Context
 
 @Database (entities = arrayOf(GymEntity::class,ExerciseEntity::class),version = 1,exportSchema = false)
-@TypeConverters(DateConverter::class)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun gymDao() : GymDao
@@ -15,10 +13,10 @@ abstract class AppDatabase : RoomDatabase() {
     companion object {
         private val databaseName = "gymDatabase"
 
-        var dbInstance:GymDao? = null
-        fun getInstance (context: Context) : GymDao? {
+        var dbInstance:AppDatabase? = null
+        fun getInstance (context: Context?) : AppDatabase? {
             if (dbInstance == null)
-                dbInstance=Room.inMemoryDatabaseBuilder(context,AppDatabase::class.java).build().gymDao()
+                dbInstance=Room.databaseBuilder(context!!.applicationContext,AppDatabase::class.java, databaseName).build()
             return dbInstance
         }
     }
