@@ -12,4 +12,24 @@
     <string name="powered">Powered by Oleksandr Ivanchenko</string>
     <string name="gmail">bstn.ref@gmail.com</string>
     <string name="sets_repeats_weight">Sets/repeats/weight:</string>
+    <string name="choose">Выберите упражнение</string>
+    <string name="add_exercise">Добавить упражнение</string>
+    <string name="exer">Упражнение...</string>
+    <string name="set_hint">sets</string>
+    <string name="rep_hint">repeats</string>
+    <string name="weight_hint">weight</string>
+    <string name="dialog_title">Добавить выполненное упражнение</string>
+    <string name="dialog_message">Вперёд к победам!</string>
+    <string name="save_dialog">Сохранить</string>
+    <string name="cancel">Отменить</string>
+    <string name="not_in_list">Нет нужного упражнения</string>
+    <string name="set_add">Добавить подход</string>
+    <string name="enter_hint">Введите название</string>
+    <string name="toolbar_add_subtitle">Add Exercise</string>
+    <string name="title_your_activity">Your Activity</string>
+    <string name="podhod">Подход</string>
+    <string name="povtor">Повторения</string>
+    <string name="wes">Вес</string>
+    <string name="stat">Статистика</string>
+    <string name="revert">Отмена</string>
 </resources>

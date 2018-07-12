@@ -1,5 +1,8 @@
 package com.shurik.gym
 
+import android.app.Application
+import android.arch.persistence.room.Room
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.CollapsingToolbarLayout
 import android.support.design.widget.Snackbar
@@ -11,10 +14,12 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import com.shurik.gym.adapters.ViewPagerAdapter
+import com.shurik.gym.database.AppDatabase
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.app_bar_home.*
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,18 +54,17 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // Handle navigation view item clicks here.
         when (item.itemId) {
             R.id.action_home -> {
-                // Handle the camera action
+                val intent = Intent (applicationContext,HomeActivity::class.java)
+                startActivity(intent)
             }
             R.id.action_statistics -> {
-
-            }
-
-            R.id.nav_share -> {
-
+                val intent = Intent (this,StatisticsActivity::class.java)
+                startActivity(intent)
             }
         }
 
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
+
 }

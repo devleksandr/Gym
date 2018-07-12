@@ -9,13 +9,8 @@ import android.widget.TextView
 import com.shurik.gym.R
 import com.shurik.gym.database.GymEntity
 
-class ExercisesAdapter : RecyclerView.Adapter<ExercisesAdapter.ViewHolder>() {
+class ExercisesAdapter(val exercises: List<GymEntity>) : RecyclerView.Adapter<ExercisesAdapter.ViewHolder>() {
 
-    private var exercises : List<GymEntity>? = null
-
-    fun ExercisesAdapter ( exercises : List<GymEntity>) {
-        this.exercises = exercises
-    }
     override fun onCreateViewHolder(viewGroup: ViewGroup, position: Int): ViewHolder {
         val v = LayoutInflater.from(viewGroup.context)
                 .inflate(R.layout.card_layout,viewGroup,false)
@@ -33,19 +28,13 @@ class ExercisesAdapter : RecyclerView.Adapter<ExercisesAdapter.ViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        var setsData = ""
         var exercise : String = exercises!!.component1().exerciseType
-        var sets : Array<Int> = exercises!!.component2().countSets
-        var repeats : Array<Int> = exercises!!.component3().countRepeats
-        var weight : Array<Double> = exercises!!.component4().weight
-        var adapterData = "$exercise\n Sets/repeats/weight:\n"
-        for (i in sets.indices) {
-            var set: String = sets[i].toString()
-            var repeat: String = repeats[i].toString()
-            var wght: String = weight[i].toString()
-            setsData = "$adapterData$set/$repeat/$wght\n"
-        }
-        holder.exerciseTV.text = setsData
+        var sets : String = exercises!!.component2().countSets
+        var repeats : String = exercises!!.component3().countRepeats
+        var weight : String = exercises!!.component4().weight
+        var adapterData = "$exercise\nSets: $sets\nRepeats:$repeats\nWeight:$weight"
+
+        holder.exerciseTV.text = adapterData
     }
 
     override fun getItemCount(): Int {

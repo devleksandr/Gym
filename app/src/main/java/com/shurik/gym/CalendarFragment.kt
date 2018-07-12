@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.CalendarView
 
 class CalendarFragment : Fragment() {
-    public val EXTRA_ID : String = "extra"
+    val EXTRA_ID : String = "extra"
 
 
     companion object {
@@ -24,7 +24,7 @@ class CalendarFragment : Fragment() {
 
         var calendar = view.findViewById<CalendarView>(R.id.calendarView)
         calendar.setOnDateChangeListener {view,year,month,dayOfMonth ->
-            val intent = Intent (context,AddExerciseActivity::class.java)
+            val intent = Intent (context,ListExercisesActivity::class.java)
             intent.putExtra(EXTRA_ID,"$year-$month-$dayOfMonth")
             startActivity(intent)
         }

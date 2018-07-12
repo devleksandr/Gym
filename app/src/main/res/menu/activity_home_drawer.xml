@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
         <item
             android:id="@+id/action_home"
             android:title="@string/home"
@@ -12,15 +11,4 @@
             android:id="@+id/action_statistics"
             android:title="@string/statistics"
             android:icon="@android:drawable/ic_menu_my_calendar"/>
-    </group>
-
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-        </menu>
-    </item>
-
 </menu>

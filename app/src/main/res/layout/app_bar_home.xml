@@ -8,7 +8,8 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity"
     app:layout_constraintStart_toStartOf="parent"
-    android:id="@+id/coordinator">
+    android:id="@+id/coordinator"
+    android:background="@color/colorPrimary">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
